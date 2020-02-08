@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Calculate from './components/Calculate';
+import CalculateForm from './components/CalculateForm';
 
 function App() {
   return (
@@ -27,33 +27,7 @@ function App() {
         <header className="App-header"></header>
       </div>
       <div>
-        <form>
-          <div>
-            <label>Mortgage principal amount</label>
-          </div>
-          <div>
-            <input></input>
-          </div>
-          <div>
-            <label>Interest rate</label>
-          </div>
-          <div>
-            <input></input>
-          </div>
-          <div>
-            <label>Amortization period</label>
-          </div>
-          <div>
-            <input></input>
-          </div>
-          <div>
-            <label>Payment frequency</label>
-          </div>
-          <div>
-            <input></input>
-          </div>
-          <Calculate />
-        </form>
+        <CalculateForm />
       </div>
     </div>
   );
