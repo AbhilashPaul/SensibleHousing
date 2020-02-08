@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
+import Dropdown from './Dropdown'
 
 //class rce
 class CalculateForm extends Component {
+
+    // paymentfrequency = ['weekly','bi-weekly','monthly']
 
     //construction rconst
     constructor(props) {
@@ -16,6 +19,7 @@ class CalculateForm extends Component {
             payment: 'Payment frequency',
             text: 'Please enter mortgage amount that is greater than $20,000.00',
             showResults : false
+            
             
         }
     }
@@ -70,8 +74,8 @@ class CalculateForm extends Component {
                     <div>
                         <label>{this.state.payment}</label>
                     </div>
-                    <div>
-                        <input></input>
+                    <div style={{display: 'flex', justifyContent: 'center'}} >
+                        <Dropdown />
                     </div>
                     <div>
                         <button>Calculate my payments</button>
