@@ -13,13 +13,28 @@ class CalculateForm extends Component {
             interest: 'Interest rate' ,
             information: 'This is usually the purchase price minus your down payment',
             amortization: 'Amortization period',
-            payment: 'Payment frequency'
+            payment: 'Payment frequency',
+            text: 'Please enter mortgage amount that is greater than $20,000.00',
+            showResults : false
             
         }
+    }
+
+    //method on click show warning  
+    clickHandler = () => {
+        this.setState ({ 
+            showResults: !this.state.showResults
+            // text: 'Please enter mortgage amount that is greater than $20,000.00'
+        })
     }
     
     //method
     render() {
+
+        const error = {
+            color: "red"
+        };
+
         return (
             <div>
                 <form>
@@ -27,11 +42,19 @@ class CalculateForm extends Component {
                         <label>{this.state.amount}</label>
                     </div>
                     <div>
-                        <input placeholder={this.state.hintamount}></input>
+                        <input onClick = {()=>this.clickHandler()} placeholder={this.state.hintamount}></input>
                     </div>
                     <div>
                         <i>{this.state.information}</i>
                     </div>
+                    {
+                        /* form load hide span element */
+                        this.state.showResults ?
+                        <div>
+                            <span style = {error}>{this.state.text}</span>
+                        </div>
+                        : null
+                    }
                     <div>
                         <label>{this.state.interest}</label>
                     </div>
