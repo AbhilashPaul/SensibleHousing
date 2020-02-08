@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Calculate from './components/Calculate';
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
           <div>
             <input></input>
           </div>
+          <Calculate />
         </form>
       </div>
     </div>
