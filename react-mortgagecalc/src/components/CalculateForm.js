@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Dropdown from './Dropdown'
 
 //class rce
 class CalculateForm extends Component {
@@ -74,8 +73,12 @@ class CalculateForm extends Component {
                     <div>
                         <label>{this.state.payment}</label>
                     </div>
-                    <div style={{display: 'flex', justifyContent: 'center'}} >
-                        <Dropdown />
+                    <div>
+                    <select>
+                        <option value="grapefruit">Weekly</option>
+                        <option value="lime">Bi-Weekly</option>
+                        <option selected value="coconut">Monthly</option>
+                    </select>
                     </div>
                     <div>
                         <button>Calculate my payments</button>
