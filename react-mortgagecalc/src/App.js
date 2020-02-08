@@ -5,22 +5,54 @@ import './App.css';
 function App() {
   return (
     /* shift+alt+a */
+
+/*     <header className="App-header">
+    <img src={logo} className="App-logo" alt="logo" />
+    <p>
+      Edit <code>src/App.js</code> and save to reload.
+    </p>
+    <a
+      className="App-link"
+      href="https://reactjs.org"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Learn React
+    </a>
+  </header> */
+
     <div className="App">
-        {/* <p>Hello</p> */}
-        <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        {/* <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p> */}
-      {/*   <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
-      </header>
+      <div>
+        <header className="App-header"></header>
+      </div>
+      <div>
+        <form>
+          <div>
+            <label>Mortgage principal amount</label>
+          </div>
+          <div>
+            <input></input>
+          </div>
+          <div>
+            <label>Interest rate</label>
+          </div>
+          <div>
+            <input></input>
+          </div>
+          <div>
+            <label>Amortization period</label>
+          </div>
+          <div>
+            <input></input>
+          </div>
+          <div>
+            <label>Payment frequency</label>
+          </div>
+          <div>
+            <input></input>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
