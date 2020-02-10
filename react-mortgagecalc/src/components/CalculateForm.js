@@ -12,15 +12,18 @@ class CalculateForm extends Component {
     
         this.state = {
             amount: 'Mortgage principal amount',
+            principalAmount: 100000,
+            amortizationPeriod: 25,
+            paymentFrequency: 'monthly',
             hintamount: '$ Enter amount',
-            interest: 'Interest rate' ,
+            interestLabel: 'Interest rate' ,
+            interestRate: 3.09,
             information: 'This is usually the purchase price minus your down payment',
             amortization: 'Amortization period',
             payment: 'Payment frequency',
             text: 'Please enter mortgage amount that is greater than $20,000.00',
             showResults : false
-            
-            
+                        
         }
     }
 
@@ -30,6 +33,34 @@ class CalculateForm extends Component {
             showResults: !this.state.showResults
             // text: 'Please enter mortgage amount that is greater than $20,000.00'
         })
+    }
+
+    handleInterestSelection (event) {
+        this.setState({
+            interestRate: event.target.value,
+        });
+        console.log(this.state.interestRate)
+    }
+
+    handlePrincipalAmountSelection (event) {
+        this.setState({
+            principalAmount: event.target.value,
+        });
+        console.log(this.state.principalAmount)
+    }
+
+    handleAmortizationPeriodSelection (event) {
+        this.setState({
+            amortizationPeriod: event.target.value,
+        });
+        console.log(this.state.amortizationPeriod)
+    }
+
+    handlePaymentFrequencySelection (event) {
+        this.setState({
+            paymentFrequency: event.target.value,
+        });
+        console.log(this.state.paymentFrequency)
     }
     
     //method
@@ -46,7 +77,7 @@ class CalculateForm extends Component {
                         <label>{this.state.amount}</label>
                     </div>
                     <div>
-                        <input className="Amount" onClick = {()=>this.clickHandler()} placeholder={this.state.hintamount}></input>
+                        <input className="Amount" onClick = {()=>this.clickHandler()} placeholder={this.state.hintamount} onChange={this.handlePrincipalAmountSelection.bind(this)}></input>
                     </div>
                     <div>
                         <i>{this.state.information}</i>
@@ -60,19 +91,20 @@ class CalculateForm extends Component {
                         : null
                     }
                     <div>
-                        <label>{this.state.interest}</label>
+                        <label>{this.state.interestLabel}</label>
                     </div>
                     <div>
-                        <select className="Interest"> 
-                            <option >0.5 year</option>
-                            <option >2 years</option>
+                        <select className="Interest" onChange={this.handleInterestSelection.bind(this)}> 
+                            <option >3.09%</option>
+                            <option >3.34%</option>
+                            <option >3.59%</option>
                         </select>
                     </div>
                     <div>
                         <label>{this.state.amortization}</label>
                     </div>
                     <div>
-                        <select className="Amortization">
+                        <select className="Amortization" onChange={this.handleAmortizationPeriodSelection.bind(this)}>
                             <option >0.5 year</option>
                             <option >2 years</option>
                             <option >3 years</option>
@@ -104,14 +136,14 @@ class CalculateForm extends Component {
                         <label>{this.state.payment}</label>
                     </div>
                     <div>
-                        <select className="Payment">
+                        <select className="Payment" onChange={this.handlePaymentFrequencySelection.bind(this)}>
                             <option >Weekly</option>
                             <option >Bi-Weekly</option>
                             <option >Monthly</option>
                         </select>
                     </div>
                     <div>
-                        <button>Calculate my payments</button>
+                        <button className="button">Calculate my payments</button>
                     </div>
                 </form>
             </div>
