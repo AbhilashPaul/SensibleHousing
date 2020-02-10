@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './CalcFormStyle.css'
 
 //class rce
 class CalculateForm extends Component {
@@ -45,7 +46,7 @@ class CalculateForm extends Component {
                         <label>{this.state.amount}</label>
                     </div>
                     <div>
-                        <input onClick = {()=>this.clickHandler()} placeholder={this.state.hintamount}></input>
+                        <input className="Amount" onClick = {()=>this.clickHandler()} placeholder={this.state.hintamount}></input>
                     </div>
                     <div>
                         <i>{this.state.information}</i>
@@ -62,7 +63,7 @@ class CalculateForm extends Component {
                         <label>{this.state.interest}</label>
                     </div>
                     <div>
-                        <select> 
+                        <select className="Interest"> 
                             <option >0.5 year</option>
                             <option >2 years</option>
                         </select>
@@ -71,7 +72,7 @@ class CalculateForm extends Component {
                         <label>{this.state.amortization}</label>
                     </div>
                     <div>
-                        <select>
+                        <select className="Amortization">
                             <option >0.5 year</option>
                             <option >2 years</option>
                             <option >3 years</option>
@@ -103,7 +104,7 @@ class CalculateForm extends Component {
                         <label>{this.state.payment}</label>
                     </div>
                     <div>
-                        <select>
+                        <select className="Payment">
                             <option >Weekly</option>
                             <option >Bi-Weekly</option>
                             <option >Monthly</option>
