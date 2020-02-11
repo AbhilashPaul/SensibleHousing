@@ -13,8 +13,8 @@ class CalculateForm extends Component {
         this.state = {
             amount: 'Mortgage principal amount',
             principalAmount: 100000,
-            amortizationPeriod: 25,
-            paymentFrequency: 'monthly',
+            amortizationPeriod: 0.5,
+            paymentFrequency: 'Weekly',
             hintamount: '$ Enter amount',
             interestLabel: 'Interest rate' ,
             interestRate: 3.09,
@@ -23,8 +23,9 @@ class CalculateForm extends Component {
             payment: 'Payment frequency',
             text: 'Please enter mortgage amount that is greater than $20,000.00',
             showResults : false
-                        
-        }
+        };
+
+        this.handleInputChange = this.handleInputChange.bind(this);
     }
 
     //method on click show warning  
@@ -35,34 +36,24 @@ class CalculateForm extends Component {
         })
     }
 
-    handleInterestSelection (event) {
+    handleInputChange(event) {
+        console.log("Changed!");
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
+
         this.setState({
-            interestRate: event.target.value,
-        });
-        console.log(this.state.interestRate)
+            [name]: value
+        }, 
+        () => {
+                console.log(this.state.interestRate);
+                console.log(this.state.principalAmount);
+                console.log(this.state.amortizationPeriod);
+                console.log(this.state.paymentFrequency);}
+        );
+        
     }
 
-    handlePrincipalAmountSelection (event) {
-        this.setState({
-            principalAmount: event.target.value,
-        });
-        console.log(this.state.principalAmount)
-    }
-
-    handleAmortizationPeriodSelection (event) {
-        this.setState({
-            amortizationPeriod: event.target.value,
-        });
-        console.log(this.state.amortizationPeriod)
-    }
-
-    handlePaymentFrequencySelection (event) {
-        this.setState({
-            paymentFrequency: event.target.value,
-        });
-        console.log(this.state.paymentFrequency)
-    }
-    
     //method
     render() {
 
@@ -71,13 +62,12 @@ class CalculateForm extends Component {
         };
 
         return (
-            <div>
                 <form>
                     <div>
                         <label>{this.state.amount}</label>
                     </div>
                     <div>
-                        <input className="Amount" onClick = {()=>this.clickHandler()} placeholder={this.state.hintamount} onChange={this.handlePrincipalAmountSelection.bind(this)}></input>
+                        <input className="Amount" name="principalAmount" onClick = {()=>this.clickHandler()} placeholder={this.state.hintamount} onChange={this.handleInputChange}></input>
                     </div>
                     <div>
                         <i>{this.state.information}</i>
@@ -94,7 +84,7 @@ class CalculateForm extends Component {
                         <label>{this.state.interestLabel}</label>
                     </div>
                     <div>
-                        <select className="Interest" onChange={this.handleInterestSelection.bind(this)}> 
+                        <select className="Interest" name="interestRate" onChange={this.handleInputChange}> 
                             <option >3.09%</option>
                             <option >3.34%</option>
                             <option >3.59%</option>
@@ -104,7 +94,7 @@ class CalculateForm extends Component {
                         <label>{this.state.amortization}</label>
                     </div>
                     <div>
-                        <select className="Amortization" onChange={this.handleAmortizationPeriodSelection.bind(this)}>
+                        <select className="Amortization" name="amortizationPeriod" onChange={this.handleInputChange}>
                             <option >0.5 year</option>
                             <option >2 years</option>
                             <option >3 years</option>
@@ -136,17 +126,16 @@ class CalculateForm extends Component {
                         <label>{this.state.payment}</label>
                     </div>
                     <div>
-                        <select className="Payment" onChange={this.handlePaymentFrequencySelection.bind(this)}>
+                        <select className="Payment" name="paymentFrequency" onChange={this.handleInputChange}>
                             <option >Weekly</option>
                             <option >Bi-Weekly</option>
                             <option >Monthly</option>
                         </select>
                     </div>
                     <div>
-                        <button className="button">Calculate my payments</button>
+                        <button className="button" onClick = {this.onClickCalculation}>Calculate my payments</button>
                     </div>
                 </form>
-            </div>
         )
     }
 }
