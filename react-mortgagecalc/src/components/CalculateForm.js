@@ -54,6 +54,14 @@ class CalculateForm extends Component {
         
     }
 
+    onClickCalculation (event) {
+        event.preventDefault(); 
+        console.log("Hi");
+        let freq = "";
+        freq = this.state.paymentFrequency;
+        console.log(freq);
+    }
+
     //method
     render() {
 
