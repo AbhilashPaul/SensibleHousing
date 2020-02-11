@@ -1,0 +1,27 @@
+.Amount {
+    height: 40px;
+    width: 250px;
+}
+
+.Interest {
+    height: 40px;
+    width: 250px;
+}
+
+.Amortization {
+    height: 40px;
+    width: 250px;
+}
+
+.Payment {
+    height: 40px;
+    width: 250px;
+}
+
+label{
+    margin-top: 5px;
+}
+
+.button {
+    height: 30px;
+}
