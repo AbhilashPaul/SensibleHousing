@@ -1,42 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
-import CalculateForm from './components/CalculateForm';
+import MortgageCalculatorForm from './components/MortgageCalculatorForm';
 
-function App() {
-  return (
-    /* shift+alt+a */
+class App extends Component {
 
-/*     <header className="App-header">
-    <img src={logo} className="App-logo" alt="logo" />
-    <p>
-      Edit <code>src/App.js</code> and save to reload.
-    </p>
-    <a
-      className="App-link"
-      href="https://reactjs.org"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Learn React
-    </a>
-  </header> */
 
-    <div className="App">
-      <div>
-        <header className="App-header"></header>
+  render() {
+    return (
+      <div className="App">
+        <div>
+          <header className="App-header"></header>
+        </div>
+        <div>
+            <h1>Mortgage Payment Calculator</h1>
+        </div>
+        <div>
+            <p>Use this calculator to compare your option and find the mortgage payment amount that best suits your needs</p>
+        </div>
+        <div>
+          <MortgageCalculatorForm />
+        </div>
       </div>
-      <div>
-          <h1>Mortgage Payment Calculator</h1>
-      </div>
-      <div>
-          <p>Use this calculator to compare your option and find the mortgage payment amount that best suits your needs</p>
-      </div>
-      <div>
-        <CalculateForm />
-      </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;
