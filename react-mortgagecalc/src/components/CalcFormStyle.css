@@ -25,3 +25,8 @@ label{
 .button {
     height: 30px;
 }
+
+.total {
+    border-color: black;
+    border-width: 10px;
+}

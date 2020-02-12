@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 import './CalcFormStyle.css'
-
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import InputGroup from 'react-bootstrap/InputGroup'
 //class rce
 class MortgageCalculatorForm extends Component {
 
@@ -22,7 +27,8 @@ class MortgageCalculatorForm extends Component {
             paymentFrequency: 'Weekly',
             interestRate: "3.09 %",
             showResults : false,
-            payment : ""
+            payment : "",
+            total: "Total payment: "
         };
         
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -104,29 +110,34 @@ class MortgageCalculatorForm extends Component {
 
         return (
             <div>
-                <form>
-                    <div>
-                        <label>{this.state.amount}</label>
-                    </div>
-                    <div>
-                        <input className="Amount" name="principalAmount" onClick = {()=>this.clickHandler()} placeholder={this.state.hintamount} onChange={this.handleInputChange}></input>
-                    </div>
-                    <div>
+                <Container>
+                    <Row>
+                        <Col md={{ span: 6, offset: 3 }}>
+                        <Form>
+                    <Form.Group>
+                        <Form.Label>{this.state.amount}</Form.Label>
+                        <br />
+                        <Form.Control placeholder={this.state.hintamount} 
+                        className="Amount" name="principalAmount" 
+                        onClick = {()=>this.clickHandler()} 
+                        onChange={this.handleInputChange}>
+                        </Form.Control>
+                        <br />
                         <i>{this.state.information}</i>
-                    </div>
-                    {
+                        <br />
+                        {
                         /* form load hide span element */
                         this.state.showResults ?
                         <div>
                             <span style = {error}>{this.state.text}</span>
                         </div>
                         : null
-                    }
-                    <div>
-                        <label>{this.state.interestLabel}</label>
-                    </div>
-                    <div>
-                        <select className="Interest" name="interestRate" onChange={this.handleInputChange}> 
+                        }
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label>{this.state.interestLabel}</Form.Label>
+                        <br />
+                        <Form.Control  as="select" className="Interest" name="interestRate" onChange={this.handleInputChange}>
                             <option >3.09 %</option>
                             <option >3.34 %</option>
                             <option >3.59 %</option>
@@ -137,14 +148,13 @@ class MortgageCalculatorForm extends Component {
                             <option >5.64 %</option>
                             <option >5.8 %</option>
                             <option >6.1 %</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label>{this.state.amortization}</label>
-                    </div>
-                    <div>
-                        <select className="Amortization" name="amortizationPeriod" onChange={this.handleInputChange}>
-                            <option >1 year</option>
+                        </Form.Control>
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label>{this.state.amortization}</Form.Label>
+                        <br />
+                        <Form.Control as="select" className="Amortization" name="amortizationPeriod" onChange={this.handleInputChange}>
+                        <option >1 year</option>
                             <option >2 years</option>
                             <option >3 years</option>
                             <option >4 years</option>
@@ -173,28 +183,48 @@ class MortgageCalculatorForm extends Component {
                             <option >27 years</option>
                             <option >28 years</option>
                             <option >29 years</option>
-                            <option >30 years</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label>{this.state.paymentLabel}</label>
-                    </div>
-                    <div>
-                        <select className="Payment" name="paymentFrequency" onChange={this.handleInputChange}>
+                            <option >30 years</option>   
+                        </Form.Control>
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label>{this.state.paymentLabel}</Form.Label>
+                        <br />
+                        <Form.Control as="select" className="Payment" name="paymentFrequency" onChange={this.handleInputChange}>
                             <option >Weekly</option>
                             <option >Bi-Weekly</option>
                             <option >Monthly</option>
-                        </select>
-                    </div>
-                    <div>
-                        <button className="button" onClick = {this.onClickCalculation}>Calculate my payments</button>
-                    </div>
-                </form>
-
-                <div>
-                <label>Payment:</label>
+                        </Form.Control>
+                    </Form.Group>
+                    <Button variant='primary' /* className="button" */ onClick = {this.onClickCalculation}>
+                        Calculate my payments
+                    </Button>   
+                    <Form.Group>
+                        
+                        <br />
+                        <Container>
+                            <Row>
+                                {/* <Col className="total">{this.state.total}{this.state.payment}</Col> */}
+                                {/* <Col>{this.state.payment}</Col> */}
+                                <Col md={{ span: 6, offset: 3 }}>
+                                <InputGroup>
+                                <InputGroup.Prepend>
+                                    <InputGroup.Text>{this.state.total} $ {this.state.payment}</InputGroup.Text>
+                                </InputGroup.Prepend>
+                                </InputGroup>
+                                </Col>                              
+                            </Row>
+                        </Container>
+                    </Form.Group>                
+                </Form>
+                        </Col>
+                    </Row>
+                </Container>
+                
+                
+                {/* <div>
+                <label>Payment: </label>
                 <span>{this.state.payment}</span>
-                </div>
+                </div> */}
             </div>
         )
     }
