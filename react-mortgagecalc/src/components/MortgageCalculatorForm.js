@@ -114,117 +114,114 @@ class MortgageCalculatorForm extends Component {
                     <Row>
                         <Col md={{ span: 6, offset: 3 }}>
                         <Form>
-                    <Form.Group>
-                        <Form.Label>{this.state.amount}</Form.Label>
-                        <br />
-                        <Form.Control placeholder={this.state.hintamount} 
-                        className="Amount" name="principalAmount" 
-                        onClick = {()=>this.clickHandler()} 
-                        onChange={this.handleInputChange}>
-                        </Form.Control>
-                        <br />
-                        <i>{this.state.information}</i>
-                        <br />
-                        {
-                        /* form load hide span element */
-                        this.state.showResults ?
-                        <div>
-                            <span style = {error}>{this.state.text}</span>
-                        </div>
-                        : null
-                        }
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>{this.state.interestLabel}</Form.Label>
-                        <br />
-                        <Form.Control  as="select" className="Interest" name="interestRate" onChange={this.handleInputChange}>
-                            <option >3.09 %</option>
-                            <option >3.34 %</option>
-                            <option >3.59 %</option>
-                            <option >3.74 %</option>
-                            <option >3.89 %</option>
-                            <option >3.94 %</option>
-                            <option >4.99 %</option>
-                            <option >5.64 %</option>
-                            <option >5.8 %</option>
-                            <option >6.1 %</option>
-                        </Form.Control>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>{this.state.amortization}</Form.Label>
-                        <br />
-                        <Form.Control as="select" className="Amortization" name="amortizationPeriod" onChange={this.handleInputChange}>
-                        <option >1 year</option>
-                            <option >2 years</option>
-                            <option >3 years</option>
-                            <option >4 years</option>
-                            <option >5 years</option>
-                            <option >6 years</option>
-                            <option >7 years</option>
-                            <option >8 years</option>
-                            <option >9 years</option>
-                            <option >10 years</option>
-                            <option >11 years</option>
-                            <option >12 years</option>
-                            <option >13 years</option>
-                            <option >14 years</option>
-                            <option >15 years</option>
-                            <option >16 years</option>
-                            <option >17 years</option>
-                            <option >18 years</option>
-                            <option >19 years</option>
-                            <option >20 years</option>
-                            <option >21 years</option>
-                            <option >22 years</option>
-                            <option >23 years</option>
-                            <option >24 years</option>
-                            <option >25 years</option>
-                            <option >26 years</option>
-                            <option >27 years</option>
-                            <option >28 years</option>
-                            <option >29 years</option>
-                            <option >30 years</option>   
-                        </Form.Control>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>{this.state.paymentLabel}</Form.Label>
-                        <br />
-                        <Form.Control as="select" className="Payment" name="paymentFrequency" onChange={this.handleInputChange}>
-                            <option >Weekly</option>
-                            <option >Bi-Weekly</option>
-                            <option >Monthly</option>
-                        </Form.Control>
-                    </Form.Group>
-                    <Button variant='primary' /* className="button" */ onClick = {this.onClickCalculation}>
-                        Calculate my payments
-                    </Button>   
-                    <Form.Group>
-                        
-                        <br />
-                        <Container>
-                            <Row>
-                                {/* <Col className="total">{this.state.total}{this.state.payment}</Col> */}
-                                {/* <Col>{this.state.payment}</Col> */}
-                                <Col md={{ span: 6, offset: 3 }}>
-                                <InputGroup>
-                                <InputGroup.Prepend>
-                                    <InputGroup.Text>{this.state.total} $ {this.state.payment}</InputGroup.Text>
-                                </InputGroup.Prepend>
-                                </InputGroup>
-                                </Col>                              
-                            </Row>
-                        </Container>
-                    </Form.Group>                
-                </Form>
+                            <Form.Group>
+                                <Form.Label>{this.state.amount}</Form.Label>
+                                <br />
+                                <Form.Control placeholder={this.state.hintamount} 
+                                className="Amount" name="principalAmount" 
+                                onClick = {()=>this.clickHandler()} 
+                                onChange={this.handleInputChange}>
+                                </Form.Control>
+                                <br />
+                                <i>{this.state.information}</i>
+                                <br />
+                                {
+                                /* form load hide span element */
+                                this.state.showResults ?
+                                <div>
+                                    <span style = {error}>{this.state.text}</span>
+                                </div>
+                                : null
+                                }
+                            </Form.Group>
+                            <Form.Group>
+                                <Form.Label>{this.state.interestLabel}</Form.Label>
+                                <br />
+                                <Form.Control  as="select" className="Interest" name="interestRate" onChange={this.handleInputChange}>
+                                    <option >3.09 %</option>
+                                    <option >3.34 %</option>
+                                    <option >3.59 %</option>
+                                    <option >3.74 %</option>
+                                    <option >3.89 %</option>
+                                    <option >3.94 %</option>
+                                    <option >4.99 %</option>
+                                    <option >5.64 %</option>
+                                    <option >5.8 %</option>
+                                    <option >6.1 %</option>
+                                </Form.Control>
+                            </Form.Group>
+                            <Form.Group>
+                                <Form.Label>{this.state.amortization}</Form.Label>
+                                <br />
+                                <Form.Control as="select" className="Amortization" name="amortizationPeriod" onChange={this.handleInputChange}>
+                                <option >1 year</option>
+                                    <option >2 years</option>
+                                    <option >3 years</option>
+                                    <option >4 years</option>
+                                    <option >5 years</option>
+                                    <option >6 years</option>
+                                    <option >7 years</option>
+                                    <option >8 years</option>
+                                    <option >9 years</option>
+                                    <option >10 years</option>
+                                    <option >11 years</option>
+                                    <option >12 years</option>
+                                    <option >13 years</option>
+                                    <option >14 years</option>
+                                    <option >15 years</option>
+                                    <option >16 years</option>
+                                    <option >17 years</option>
+                                    <option >18 years</option>
+                                    <option >19 years</option>
+                                    <option >20 years</option>
+                                    <option >21 years</option>
+                                    <option >22 years</option>
+                                    <option >23 years</option>
+                                    <option >24 years</option>
+                                    <option >25 years</option>
+                                    <option >26 years</option>
+                                    <option >27 years</option>
+                                    <option >28 years</option>
+                                    <option >29 years</option>
+                                    <option >30 years</option>   
+                                </Form.Control>
+                            </Form.Group>
+                            <Form.Group>
+                                <Form.Label>{this.state.paymentLabel}</Form.Label>
+                                <br />
+                                <Form.Control as="select" className="Payment" name="paymentFrequency" onChange={this.handleInputChange}>
+                                    <option >Weekly</option>
+                                    <option >Bi-Weekly</option>
+                                    <option >Monthly</option>
+                                </Form.Control>
+                            </Form.Group>
+                            <Button variant='primary' /* className="button" */ onClick = {this.onClickCalculation}>
+                                Calculate my payments
+                            </Button>   
+                            <Form.Group>
+                                
+                                <br />
+                                <Container>
+                                    <Row>
+                                        {/* <Col className="total">{this.state.total}{this.state.payment}</Col> */}
+                                        {/* <Col style={{ backgroundColor: 'white'}}>{this.state.payment}</Col> */}
+                                        <Col xs lg="2"></Col>
+                                        <Col xs={6}>
+                                            <InputGroup>
+                                                <InputGroup.Prepend>
+                                                    <InputGroup.Text>{this.state.total} $ </InputGroup.Text>
+                                                    <InputGroup.Text>{this.state.payment}</InputGroup.Text>
+                                                </InputGroup.Prepend>
+                                            </InputGroup>
+                                        </Col>  
+                                        <Col xs lg="2"></Col>                             
+                                    </Row>
+                                </Container>
+                            </Form.Group>                
+                        </Form>
                         </Col>
                     </Row>
                 </Container>
-                
-                
-                {/* <div>
-                <label>Payment: </label>
-                <span>{this.state.payment}</span>
-                </div> */}
             </div>
         )
     }
