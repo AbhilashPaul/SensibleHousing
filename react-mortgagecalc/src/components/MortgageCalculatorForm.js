@@ -2,7 +2,10 @@ import React, { Component } from 'react'
 import './CalcFormStyle.css'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import InputGroup from 'react-bootstrap/InputGroup'
 //class rce
 class MortgageCalculatorForm extends Component {
 
@@ -24,7 +27,8 @@ class MortgageCalculatorForm extends Component {
             paymentFrequency: 'Weekly',
             interestRate: "3.09 %",
             showResults : false,
-            payment : ""
+            payment : "",
+            total: "Total payment: "
         };
         
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -106,7 +110,10 @@ class MortgageCalculatorForm extends Component {
 
         return (
             <div>
-                <Form>
+                <Container>
+                    <Row>
+                        <Col md={{ span: 6, offset: 3 }}>
+                        <Form>
                     <Form.Group>
                         <Form.Label>{this.state.amount}</Form.Label>
                         <br />
@@ -190,13 +197,34 @@ class MortgageCalculatorForm extends Component {
                     </Form.Group>
                     <Button variant='primary' /* className="button" */ onClick = {this.onClickCalculation}>
                         Calculate my payments
-                    </Button>                   
+                    </Button>   
+                    <Form.Group>
+                        
+                        <br />
+                        <Container>
+                            <Row>
+                                {/* <Col className="total">{this.state.total}{this.state.payment}</Col> */}
+                                {/* <Col>{this.state.payment}</Col> */}
+                                <Col md={{ span: 6, offset: 3 }}>
+                                <InputGroup>
+                                <InputGroup.Prepend>
+                                    <InputGroup.Text>{this.state.total} $ {this.state.payment}</InputGroup.Text>
+                                </InputGroup.Prepend>
+                                </InputGroup>
+                                </Col>                              
+                            </Row>
+                        </Container>
+                    </Form.Group>                
                 </Form>
+                        </Col>
+                    </Row>
+                </Container>
                 
-                <div>
-                <label>Payment:</label>
+                
+                {/* <div>
+                <label>Payment: </label>
                 <span>{this.state.payment}</span>
-                </div>
+                </div> */}
             </div>
         )
     }
