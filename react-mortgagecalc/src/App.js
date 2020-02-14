@@ -4,6 +4,7 @@ import MortgageCalculatorForm from './components/MortgageCalculatorForm';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Button from 'react-bootstrap/Button'
 import './components/CalcFormStyle.css'
+import PaymentResults from './components/PaymentResults';
 
 class App extends Component {
 
@@ -22,6 +23,7 @@ class App extends Component {
           <div>
             <MortgageCalculatorForm />
           </div>
+          {/* <PaymentResults /> */}
       </div>
     );
   }
