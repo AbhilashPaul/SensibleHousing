@@ -6,7 +6,6 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import InputGroup from 'react-bootstrap/InputGroup'
-
 //class rce
 class MortgageCalculatorForm extends Component {
 
@@ -29,7 +28,7 @@ class MortgageCalculatorForm extends Component {
             interestRate: "3.09 %",
             showResults : false,
             payment : "",
-            total: "Total payment: "
+            total: "Total Payment"
         };
         
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -196,29 +195,16 @@ class MortgageCalculatorForm extends Component {
                                     <option >Monthly</option>
                                 </Form.Control>
                             </Form.Group>
-                            <Button variant='primary' /* className="button" */ onClick = {this.onClickCalculation}>
-                                Calculate my payments
-                            </Button>   
                             <Form.Group>
-                                
+                                <Button variant='primary' /* className="button" */ onClick = {this.onClickCalculation}>
+                                    Calculate my payments
+                                </Button> 
                                 <br />
-                                <Container>
-                                    <Row>
-                                        {/* <Col className="total">{this.state.total}{this.state.payment}</Col> */}
-                                        {/* <Col style={{ backgroundColor: 'white'}}>{this.state.payment}</Col> */}
-                                        <Col xs lg="2"></Col>
-                                        <Col xs={6}>
-                                            <InputGroup>
-                                                <InputGroup.Prepend>
-                                                    <InputGroup.Text>{this.state.total} $ </InputGroup.Text>
-                                                    <InputGroup.Text>{this.state.payment}</InputGroup.Text>
-                                                </InputGroup.Prepend>
-                                            </InputGroup>
-                                        </Col>  
-                                        <Col xs lg="2"></Col>                             
-                                    </Row>
-                                </Container>
-                            </Form.Group>                
+                                <br />
+                                {/* <Form.Control>  {this.state.payment}</Form.Control> */}
+                                <Form.Label className="result">{this.state.total}</Form.Label>
+                                <Form.Control as="span">$ {this.state.payment}</Form.Control>
+                            </Form.Group>              
                         </Form>
                         </Col>
                     </Row>

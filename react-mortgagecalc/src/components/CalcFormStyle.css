@@ -26,7 +26,8 @@ label{
     height: 30px;
 }
 
-.total {
+.result {
+    border: 10px;
     border-color: black;
     border-width: 10px;
 }
