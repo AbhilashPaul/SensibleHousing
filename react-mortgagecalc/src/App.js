@@ -15,20 +15,20 @@ class App extends Component {
     super(props);
 
     this.state = {
-        amount: 'Mortgage principal amount',
-        hintamount: '$ Enter amount',
-        interestLabel: 'Interest rate' ,
-        information: 'This is usually the purchase price minus your down payment',
-        amortization: 'Amortization period',
-        paymentLabel: 'Payment frequency',
-        text: 'Please enter mortgage amount that is greater than $20,000.00',
-        principalAmount: 100000,
-        amortizationPeriod: "1 year",
-        paymentFrequency: 'Weekly',
-        interestRate: "3.09 %",
-        showResults : false,
-        payment : "",
-        total: "Total Payment"
+      amount: 'Mortgage principal amount',
+      hintamount: '$ Enter amount',
+      interestLabel: 'Interest rate' ,
+      information: 'This is usually the purchase price minus your down payment',
+      amortization: 'Amortization period',
+      paymentLabel: 'Payment frequency',
+      text: 'Please enter mortgage amount that is greater than $20,000.00',
+      principalAmount: 100000,
+      amortizationPeriod: "1 year",
+      paymentFrequency: 'Weekly',
+      interestRate: "3.09 %",
+      showResults : false,
+      payment : "",
+      total: "Total Payment"
     };
     
     this.handleInputChange = this.handleInputChange.bind(this);

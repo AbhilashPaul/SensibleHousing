@@ -44,10 +44,9 @@ constructor(props) {
 
         const popover = (
             <Popover id="popover-basic">
-              <Popover.Title as="h3">Popover right</Popover.Title>
+              <Popover.Title as="h3">Hint</Popover.Title>
               <Popover.Content>
-                And here's some <strong>amazing</strong> content. It's very engaging.
-                right?
+                Please enter mortgage amount that is greater than <strong>$20,000.00</strong>
               </Popover.Content>
             </Popover>
           );
@@ -59,33 +58,31 @@ constructor(props) {
                         <Col md={{ span: 6, offset: 3 }}>
                         <Form>
                             <Form.Group>
-                                <OverlayTrigger trigger="click" placement="right" overlay={popover}>
-                                    <Form.Control trigger="click" placement="right" overlay={popover}></Form.Control>
-                                    {/* <Form>
-                                        <Form.Group>
-                                            <Form.Control trigger="click" placement="right" overlay={popover}></Form.Control>
-                                        </Form.Group>
-                                    </Form>  */}                             
-                                </OverlayTrigger>
-                                <br />
                                 <Form.Label>Mortgage principal amount</Form.Label>
                                 <br />
-                                
-                                <Form.Control placeholder={this.state.hintamount} 
+                                <OverlayTrigger trigger="click" placement="right" overlay={popover}>
+                                   {/*  <Form.Control trigger="click" placement="right" overlay={popover}></Form.Control>   */}  
+                                    <Form.Control trigger="click" placement="right" overlay={popover} placeholder={this.state.hintamount} 
                                 className="Amount" name="principalAmount" 
-                                onClick = {()=>this.clickHandler()} 
+                                /* onClick = {()=>this.clickHandler()}  */
                                 onChange={this.handleInputChange}>
-                                </Form.Control>
+                                </Form.Control>                                                        
+                                </OverlayTrigger>
+                                                            
+                               {/*  <Form.Control trigger="click" placement="right" overlay={popover} placeholder={this.state.hintamount} 
+                                className="Amount" name="principalAmount" 
+                                onChange={this.handleInputChange}>
+                                </Form.Control> */}
                                 <br />
                                 <i>{this.state.information}</i>
                                 <br />
                                 {
                                 /* form load hide span element */
-                                this.state.showResults ?
+                               /*  this.state.showResults ?
                                 <div>
                                     <span style = {error}>{this.state.text}</span>
                                 </div>
-                                : null
+                                : null */
                                 }
                             </Form.Group>
                             <Form.Group>
