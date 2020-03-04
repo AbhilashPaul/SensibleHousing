@@ -60,15 +60,22 @@ constructor(props) {
                             <Form.Group>
                                 <Form.Label>Mortgage principal amount</Form.Label>
                                 <br />
-                                <OverlayTrigger trigger="click" placement="right" overlay={popover}>
-                                   {/*  <Form.Control trigger="click" placement="right" overlay={popover}></Form.Control>   */}  
-                                    <Form.Control trigger="click" placement="right" overlay={popover} placeholder={this.state.hintamount} 
-                                className="Amount" name="principalAmount" 
-                                /* onClick = {()=>this.clickHandler()}  */
-                                onChange={this.handleInputChange}>
-                                </Form.Control>                                                        
-                                </OverlayTrigger>
-                                                            
+                                <OverlayTrigger trigger="click" placement="right" overlay={popover} rootClose={true}> 
+                                    <Form.Control trigger="click" placement="right" overlay={popover} 
+                                    placeholder={this.state.hintamount} 
+                                    className="Amount" name="principalAmount"                                 
+                                    onChange={this.handleInputChange}>
+                                    </Form.Control>                                                        
+                                </OverlayTrigger> 
+
+                            {/*     <Overlay trigger="click" placement="right" overlay={popover} rootClose={true}> 
+                                    <Form.Control trigger="click" placement="right" overlay={popover} 
+                                    placeholder={this.state.hintamount} 
+                                    className="Amount" name="principalAmount"                                 
+                                    onChange={this.handleInputChange}>
+                                    </Form.Control>                                                        
+                                </Overlay>  */} 
+
                                {/*  <Form.Control trigger="click" placement="right" overlay={popover} placeholder={this.state.hintamount} 
                                 className="Amount" name="principalAmount" 
                                 onChange={this.handleInputChange}>
